@@ -1,0 +1,26 @@
+<section class="contentblock workshops">
+	<div class="row columns">
+		<h2>Workshops</h2>
+	</div>
+	<div class="row">
+		{% for workshop in contentblock.workshops_repeater %}
+
+			{% if workshop.workshop_object.thumbnail %}
+				{% set backgroundImage = TimberImage(workshop.workshop_object.thumbnail.src('event-grid')) %}
+				{% set class = 'has-thumbnail' %}
+			{% else %}
+				{% set class = 'no-thumbnail' %}
+			{% endif %}			
+				
+				<div class="small-12 medium-6 columns">					
+					<a href="{{ workshop.workshop_object.link }}">
+						<div class="workshop {{ class }}" data-interchange="[{{ backgroundImage }}, small]">
+							<h3 class="workshop__title">{{ workshop.workshop_object.title }}</h3>
+						</div>
+					</a>		
+				</div>
+
+		{% endfor %}	
+	</div>	
+</section>
+

@@ -1,0 +1,13 @@
+{% if post.get_field('banner_image') %}
+	{% set banner_image = TimberImage(post.get_field('banner_image')).src('banner') %}
+{% elseif post.thumbnail %}
+	{% set banner_image = TimberImage(post.thumbnail.src('banner')) %}
+{% else %}
+	{% set banner_image = TimberImage(options.fallback_banner).src('banner') %}
+{% endif %}
+{% set banner_image_sm = banner_image|resize(640) %}
+{% set banner_image_md = banner_image|resize(1024) %}
+
+<section class="banner" data-interchange="[{{banner_image_sm}}, small], [{{banner_image_md}}, medium], [{{banner_image}}, large]">	
+		<h1 class="banner__title">{{ post.title }}</h1>
+</section>

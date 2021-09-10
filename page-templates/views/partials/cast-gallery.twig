@@ -1,0 +1,42 @@
+<section class="contentblock cast-gallery-section">
+	<div class="row columns">
+		<h2>Meet the Cast</h2>
+	</div>
+	<div class="cast-gallery">				
+		{% for member in contentblock.cast_repeater %}
+			{% set headshot = TimberImage(member.member_headshot).src|resize(350, 225) %}
+			{% set memberId = member.member_name|lower|replace(' ', '-') %}
+			
+				
+			<div class="member {% if member.member_bio %}member--has-bio{% endif %}" {% if member.member_bio %}data-open="bio-{{ memberId }}"{% endif %}>
+				<img class="member__headshot" src="{{ headshot }}">
+				<div class="member__more-info">
+					<h3 class="member__name">{{ member.member_name }}</h3>					
+				</div>
+			</div>
+				
+			
+			{% if member.member_bio %}
+				<div class="reveal full reveal--staff-bio" id="bio-{{ memberId }}" data-reveal data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+
+					<button class="close-button" data-close aria-label="Close reveal" type="button">
+					    <span aria-hidden="true">&times;</span>
+					</button>
+
+					<div class="reveal--staff-bio__grid">
+
+						<h1>
+							{{ member.member_name }}
+						</h1>  
+						<div class="staff__bio">
+							{{ member.member_bio }}
+						</div>
+
+					</div>
+					
+				</div>
+		{% endif %}
+
+		{% endfor %}
+	</div>
+</section>

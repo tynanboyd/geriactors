@@ -1,0 +1,26 @@
+$transition: all 0.2s ease;
+$dark-nav-color: #2C3840;
+
+$color-body: #272832;
+
+$magenta: #E60046;
+$blue: #4177BC;
+$teal: #499597;
+$orange: #EC5E45;
+
+@mixin divider {
+	background: linear-gradient(to right, $teal 25%, $blue 25%, $blue 50%, $magenta 50%, $magenta 75%, $orange 75%, $orange 100%);
+	background-size: cover;
+}
+
+.divider {
+	@include divider;
+	height: 10px;
+	margin-bottom: 50px;	
+}
+
+$lightgrey: #626262;
+
+body {
+	background-color: #FFFDFA;
+}

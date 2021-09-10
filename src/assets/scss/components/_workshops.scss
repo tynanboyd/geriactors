@@ -1,0 +1,25 @@
+.workshop {
+	background-size: cover;
+	background-color: $teal;	
+	color: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: $sans;
+	margin-bottom: 25px;
+	padding: 50px;	
+	text-align: center;
+	min-height: 200px;
+	transition: $transition;	
+	&:hover {
+		filter: brightness(1.1);
+	}
+
+	&.no-thumbnail {
+		background-image: none !important;
+	}
+
+	&__title {
+		color: $white;
+	}
+}

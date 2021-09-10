@@ -1,0 +1,45 @@
+$sans: 'museo-sans', 'Museo Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$serif: 'Calluna', 'Georgia', 'Times', serif;
+
+body {
+	font-family: $serif;
+	color: $color-body;
+}
+
+blockquote {
+	color: $lightgrey;
+	border-color: $magenta;
+	font-family: $sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $sans;
+	color: $magenta;
+}
+
+h2 {
+	font-weight: bold;
+}
+
+h3 {
+	font-weight: bold;	
+	font-size: 1.375em;
+}
+
+h4 {
+	color: $color-body;
+	font-size: 1.375em;
+	text-transform: uppercase;
+}
+
+a {
+	color: $magenta;
+	transition: $transition;
+	&:hover {
+		color: $blue;
+	}
+}
+
+figure {
+	max-width: 100% !important;
+}

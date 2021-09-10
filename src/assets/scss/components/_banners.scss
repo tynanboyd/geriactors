@@ -1,0 +1,23 @@
+.banner {
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	height: 300px;
+	justify-content: center;
+	@include breakpoint(large) {
+		height: 450px;
+		justify-content: flex-start;
+	}
+
+	&__title {
+		background-color: $white;
+		font-weight: bold;
+		align-self: flex-end;
+		margin-bottom: 0;		
+		padding: 0.2rem 0.8rem;
+		border-radius: 5px 5px 0px 0px;
+		@include breakpoint(large) {
+			margin-left: 10%;
+		}
+	}
+}

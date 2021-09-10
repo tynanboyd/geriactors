@@ -1,0 +1,13 @@
+.supporters {
+	padding: 50px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
+	grid-row-gap: 10px;
+
+	img {
+		min-width: 50px;
+		margin: 0 auto;
+		display: block;
+	}
+}

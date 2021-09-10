@@ -1,0 +1,13 @@
+{% include 'page-templates/views/partials/banner.twig' %}
+
+{% if post.content %}
+	<section class="content-editor">
+		<div class="row columns">
+			{{ post.content }}
+		</div>
+	</section>
+{% endif %}
+
+<main class="contentblocks-wrapper">
+	{% include 'page-templates/views/partials/contentblocks.twig' %}
+</main>

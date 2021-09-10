@@ -1,0 +1,40 @@
+<section class="contentblock staff-gallery">
+	<div class="row columns">
+		<h2>Staff</h2>
+	</div>
+	<div class="row">				
+		{% for staff in contentblock.staff_repeater %}
+			{% set headshot = TimberImage(staff.staff_headshot).src|resize(350, 225) %}
+			{% set staffId = staff.staff_name|lower|replace(' ', '-') %}
+			<div class="small-12 medium-4 columns">
+				
+					<div class="staff" data-open="bio-{{ staffId }}">
+						<img class="staff__headshot" src="{{ headshot }}">
+						<h3 class="staff__name">{{ staff.staff_name }}</h3>
+					</div>
+				
+			</div>
+			
+			<div class="reveal full reveal--staff-bio" id="bio-{{ staffId }}" data-reveal data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+
+				<button class="close-button" data-close aria-label="Close reveal" type="button">
+				    <span aria-hidden="true">&times;</span>
+				</button>
+
+				<div class="reveal--staff-bio__grid">
+
+					<h1>
+						{{ staff.staff_name }}
+					</h1>  
+					<div class="staff__bio">
+						{{ staff.staff_bio }}
+						<small data-close>[Esc key to close]</small>
+					</div>
+
+				</div>
+				
+			</div>						
+
+		{% endfor %}
+	</div>
+</section>

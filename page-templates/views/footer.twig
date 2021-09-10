@@ -1,0 +1,40 @@
+<footer class="site-footer">
+
+ <div class="row">
+ 	<div class="small-12 large-4 column">
+ 		{{ options.mailchimp_signup_form }}
+ 	</div>
+ 	<div class="small-12 large-4 column site-footer__contact">
+ 		<h5>Contact Information</h5> 		
+ 		{% if options.site_email %}<a href="mailto:{{ options.site_email }}">{{ options.site_email }}</a>{% endif %}
+ 			{% if options.site_phone %}<a href="tel:{{ options.site_phone }}">{{ options.site_phone }}</a>{% endif %}
+ 	</div>
+ 	<div class="small-12 large-4 column">
+ 		<h5>Menu</h5>
+ 		<nav class="footer-navigation" role="navigation" id="footer-nav">
+ 		      <ul class="menu vertical">
+ 		        {% for item in footermenu.get_items %}
+ 		          <li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.link}}">{{item.title}}</a> 		            
+ 		          </li>
+ 		        {% endfor %}         
+ 		      </ul>
+ 		</nav>
+ 	</div>
+ 	<div class="small-12 large-4 column">
+ 		<h5>Connect</h5>
+ 		<ul class="menu social">
+ 			{% if options.site_vimeo %}<li><a href="{{ options.site_vimeo }}"><i class="fab fa-vimeo-v"></i></a></li>{% endif %}
+			{% if options.site_twitter %}<li><a href="{{ options.site_twitter }}"><i class="fab fa-twitter"></i></a></li>{% endif %}
+			{% if options.site_facebook %}<li><a href="{{ options.site_facebook }}"><i class="fab fa-facebook"></i></a></li>{% endif %}
+ 		</ul>
+ 	</div>
+ </div>
+
+</footer>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+{{ wp_footer }}
+
+  </body>
+</html>

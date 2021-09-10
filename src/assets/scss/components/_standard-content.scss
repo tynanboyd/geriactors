@@ -1,0 +1,18 @@
+.standard-content-editor {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	blockquote {
+		align-self: flex-end;
+	}
+
+	.column {		
+
+	}
+
+	.row {
+		div:first-child {
+			flex-grow: 2;
+		}
+	}
+}

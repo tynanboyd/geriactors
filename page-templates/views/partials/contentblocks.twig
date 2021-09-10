@@ -1,0 +1,33 @@
+{% for contentblock in post.get_field('content_blocks') %}
+
+	{% if contentblock.acf_fc_layout == 'standard_content' %}<!--STANDARD CONTENT EDITOR-->		
+
+		<section class="contentblock standard-content-editor">
+			<div class="row">
+				{% for column in contentblock.standard_content_editor %} 
+					<div class="small-12 medium-expand column">
+						{{ column.standard_content_editor_column }}
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+
+
+	{% elseif contentblock.acf_fc_layout == 'staff_gallery_content' %}<!--STAFF GALLERY EDITOR-->				
+		{% include 'page-templates/views/partials/staff-gallery.twig' %}
+
+	{% elseif contentblock.acf_fc_layout == 'cast_gallery_content' %}<!--CAST GALLERY EDITOR-->				
+		{% include 'page-templates/views/partials/cast-gallery.twig' %}
+
+	{% elseif contentblock.acf_fc_layout == 'past_events_content' %}<!--PAST EVENT BLOCK-->
+		{% include 'page-templates/views/partials/past-events.twig' %}
+
+	{% elseif contentblock.acf_fc_layout == 'workshops_content' %}<!--WORKSHOPS-->
+		{% include 'page-templates/views/partials/workshops.twig' %}	
+
+	{% elseif contentblock.acf_fc_layout == 'call_to_action_content' %}<!--CALL TO ACTION-->
+		{% include 'page-templates/views/partials/cta.twig' %}	
+
+	{% endif %}
+
+{% endfor %}

@@ -1,0 +1,50 @@
+<div class="frontpage-banner">
+	{% include 'page-templates/views/partials/banner.twig' %}
+</div>
+
+<div class="frontpage-blocks">
+	{% include 'page-templates/views/partials/contentblocks.twig' %}
+</div>
+
+<div class="divider"></div>
+
+<section class="events-listing">
+	<div class="row columns">
+		<h2>Upcoming Events</h2>
+	</div>
+
+	<div class="events-listing-container">
+		{% for event in upcomingEvents %}
+			
+			{% set event_category = event.term %}
+			{% set event_image = TimberImage(event.thumbnail.src|resize(683)) %}
+			<a class="event" href="{{ event.link }}">
+				<div class="event__block event-type--{{ event_category }}" data-interchange="[{{ event_image }}, small]">
+					<div class="event__block__content-wrapper">
+						<h2 class="event__title">{{ event.title }}</h2>					
+						{% if event.event_dates %}<span class="event__block__dates">{{ event.event_dates }}</span>{% endif %}
+					</div>
+				</div>
+			</a>
+
+		{% endfor %}
+	</div>
+
+</section>
+
+
+<section class="supporters-container">
+	<div class="row columns">
+		<div class="supporters">
+			{% for supporter in post.get_field('supporters') %}
+				
+					{% if supporter.supporter_link %}
+						<a href="{{ supporter.supporter_link }}">{% endif %}
+							<img src="{{ TimberImage(supporter.supporter_logo).src|resize(125) }}">
+					{% if supporter.supporter_link %}
+						</a>
+					{% endif %}			
+			{% endfor %}		
+		</div>
+	</div>		
+</section>

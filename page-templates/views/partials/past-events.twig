@@ -1,0 +1,43 @@
+<section class="contentblock past-events">
+	<div class="row columns">
+		<h2>Past Productions</h2>
+	</div>
+
+	<div class="past-events__slider">
+		{% for event in past_events %}
+			{% set eventImage = TimberImage(event.thumbnail.src('large')) %}
+			<a href="{{ event.link }}">
+				<div class="past-event" data-interchange="[{{ eventImage }}, small]">
+					<h3 class="past-event__title">{{ event.title }}</h3>
+				</div>			
+			</a>
+		{% endfor %}
+	</div>
+
+</section>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+	  $('.past-events__slider').slick({
+	    slidesToShow: 4,
+	    responsive: [	       
+	       {
+	         breakpoint: 640,
+	         settings: {
+	           slidesToShow: 2,
+	           slidesToScroll: 2
+	         }
+	       },
+	       {
+	         breakpoint: 480,
+	         settings: {
+	           slidesToShow: 1,
+	           slidesToScroll: 1
+	         }
+	       }	      
+	     ]
+	  });
+	});
+
+</script>

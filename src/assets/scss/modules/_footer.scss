@@ -1,0 +1,72 @@
+.site-footer {
+  background-color: $color-body;
+  font-family: $sans;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .footer-navigation {
+  	a {
+  		padding-left: 0;
+  		display: inline-block;
+  		font-size: 0.75em;
+  	}
+
+  	.menu .is-active > a {
+  		background-color: $color-body;
+  	}
+  }
+
+  &__contact {
+  	a {
+		font-size: 0.75em;
+		display: block;
+  	}  	
+  }
+
+  #mc_embed_signup {
+  	background: $color-body;
+  	label {
+  		color: $white;
+  	}
+
+  	input[type=submit] {
+  		background-color: $blue;
+  		display: block;
+  		margin: 0;
+      @include breakpoint(large) {
+        width: 100%;
+      }  		
+  		&:hover {
+  			background-color: $magenta;
+  		}
+  	}
+
+  	input {
+  		&.email {
+  			width: 100%;
+  		}
+  	}
+  }
+
+  a, h5 {
+  	color: $white;
+  }
+
+  h5 {
+  	text-transform: uppercase;
+  	font-size: 0.6em;
+  }
+
+  .menu.social {
+  	a:first-child {
+  		padding-left: 0;
+  	}
+  }
+
+  a {
+  	&:hover {
+  		color: $magenta;
+  	}
+  }
+}
+

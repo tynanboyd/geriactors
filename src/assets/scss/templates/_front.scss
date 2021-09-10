@@ -1,0 +1,26 @@
+.frontpage-banner {
+  .banner__title {
+    display: none;
+  }
+}
+
+.frontpage-blocks {
+  p {
+    @include breakpoint(large) {
+      font-weight: 600;
+      font-size: 1.8em;
+      line-height: 1.3333;
+    }    
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  blockquote {
+    p {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+}

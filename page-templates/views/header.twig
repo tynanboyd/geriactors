@@ -1,0 +1,27 @@
+<header class="site-header">
+	<div class="row align-middle">
+
+		<div class="small-12 large-2 columns">
+			<a href="{{ site.link }}"><img class="site-header__logo" src="{{ theme.link }}/dist/assets/images/geriactors-logo-white.svg"></a>
+		</div>
+
+		<div class="columns">
+			<nav class="main-navigation" role="navigation" id="top-nav">
+			      <ul class="menu dropdown align-center large-horizontal vertical" data-dropdown-menu>
+			        {% for item in menu.get_items %}
+			          <li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.link}}">{{item.title}}</a>
+			            {% if item.get_children %}
+			              <ul class="menu submenu align-left">
+			                {% for child in item.get_children %}
+			                  <li class="nav-drop-item"><a href="{{child.link}}">{{child.title}}</a></li>
+			                {% endfor %}
+			               </ul>
+			            {% endif %}
+			          </li>
+			        {% endfor %}         
+			      </ul>
+			</nav>
+		</div>
+
+	</div>
+</header>
