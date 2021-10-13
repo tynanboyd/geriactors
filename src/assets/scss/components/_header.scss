@@ -1,50 +1,39 @@
 .site-header {
-	background-color: $magenta;	
-	border-top: 10px solid $color-body;
-	display: flex;
-	align-items: center;
-	font-family: $sans;
-	padding: 25px;
+  background-color: $magenta;
+  border-top: 10px solid $color-body;
+  display: flex;
+  align-items: center;
+  font-family: $sans;
+  padding: 25px;
 
-	@include breakpoint(large) {
-		min-height: 110px;
-		padding: 0;
-	}
+  @include breakpoint(large) {
+    min-height: 110px;
+    padding: 0;
+  }
 
-	&__logo {
-		height: 100%;
-		width: auto;
-		min-width: 140px;
-	}	
+  &__logo {
+    height: 100%;
+    width: auto;
+    min-width: 140px;
+  }
 
-	ul {
-		@include breakpoint(large) {
-			justify-content: flex-end;
-		}
-		li {
-			&:last-child {
-				a {
-					background-color: $blue;
-					border-radius: 50px;	
-					transition: $transition;				
-					border-bottom: 0;					
-					&:hover {
-						border-bottom: none;
-						background-color: darken($blue, 5%);						
-					}
-				}
-			}
-
-			a { 
-				color: $white;
-				text-transform: uppercase;
-				font-size: 0.7em;
-				border-bottom: 3px solid transparent;				
-				margin-bottom: 0;
-				&:hover {
-					border-bottom: 3px solid $white;
-				}
-			}
-		}
-	}
+  & > ul {
+    @include breakpoint(large) {
+      justify-content: flex-end;
+    }
+    li {
+      &:last-child {
+        a {
+          background-color: $blue;
+          border-radius: 50px;
+          transition: $transition;
+          border-bottom: 0;
+          &:hover {
+            border-bottom: none;
+            background-color: darken($blue, 5%);
+          }
+        }
+      }
+    }
+  }
 }

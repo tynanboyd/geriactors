@@ -1,0 +1,24 @@
+{% include 'page-templates/views/partials/banner.twig' %}
+
+
+  <section class="content-editor standard-content-editor">
+    <div class="row columns">
+      {% if can_view_content and logged_in and not expired  %}
+       {{ post.content }}
+      {% elseif expired and logged_in %}
+        {{ post.meta('expired_message') }}
+      {% elseif logged_in %}
+        {{ post.meta('not_purchased_message') }}
+      {% endif %}
+      {% if not logged_in %}
+        {{ post.meta('not_purchased_message') }}
+        <p>Already purchased this? Log in to view this content.</p>
+        {{ function('wp_login_form') }}
+      {% endif %}
+    </div>
+  </section>
+
+
+<main class="contentblocks-wrapper">
+  {% include 'page-templates/views/partials/contentblocks.twig' %}
+</main>

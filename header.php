@@ -46,6 +46,6 @@
 
 
 	<?php		  
-	    $context = Timber::get_context();
+	    $context = Timber::context();
 	    Timber::render('page-templates/views/header.twig', $context);
 	?>

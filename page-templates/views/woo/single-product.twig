@@ -1,0 +1,33 @@
+{# {% include 'page-templates/views/partials/banner.twig' %} #}
+
+{% do action('woocommerce_before_single_product') %}
+  <section class="content-editor woocommerce-section">
+    <div class="row">
+      <article itemscope itemtype="http://schema.org/Product" class="page-wrapper woocommerce-product single-product-details {{ post.class }} post-content wysiwyg large-6 columns">
+
+
+        <div class="woocommerce-product__image-wrapper">
+          {% do action('woocommerce_before_single_product_summary') %}
+        </div>
+
+
+        {% if post.content %}
+          <div class="summary entry-summary woocommerce-product__content mb-3">
+            {{ post.content }}
+          </div>
+        {% endif %}
+
+        <div class="woocommerce-product__excerpt">
+            {# woocommerce_single_product_summary outputs the Add to Cart button #}
+            {% do action('woocommerce_single_product_summary') %}
+            {# {% do action('woocommerce_after_single_product_summary') %} #}
+        </div>
+
+    </article>
+    </div>
+  </section>
+
+
+  <div class="woocommerce-product__add-to-cart">
+    {# {% do action('woocommerce_after_shop_loop_item') %} #}
+  </div>

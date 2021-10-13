@@ -2,7 +2,7 @@
 
 get_header();
 
-$context = Timber::get_context();
+$context = Timber::context();
 $context['post'] = new TimberPost();
 
 // past events

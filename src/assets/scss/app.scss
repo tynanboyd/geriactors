@@ -1,9 +1,8 @@
 @charset 'utf-8';
 
-
-@import 'settings';
-@import 'foundation';
-@import 'motion-ui';
+@import "settings";
+@import "foundation";
+@import "motion-ui";
 
 @include foundation-global-styles;
 // @include foundation-grid;
@@ -89,7 +88,7 @@
 @import "components/slick-theme";
 @import "components/workshops";
 
-
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
+@import "templates/woocommerce-pages";
